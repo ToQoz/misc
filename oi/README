@@ -1,4 +1,6 @@
 Installation
 	go get github.com/ToQoz/misc/oi
 Usage
-	seq 1 5000 | xargs -n 1 oi
+	oi -h
+	Usage of oi:
+		-n=1: number of lines

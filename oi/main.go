@@ -1,13 +1,28 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"math/rand"
+	"os"
 	"time"
 )
 
+var (
+	n = flag.Int("n", 1, "number of lines")
+)
+
 func main() {
-	fmt.Println(string(goi()))
+	flag.Parse()
+
+	if *n <= 0 {
+		fmt.Fprintln(os.Stderr, "-n should be larger than 0")
+	}
+
+	for i := 0; i < *n; i++ {
+		os.Stdout.Write(goi())
+		os.Stdout.Write([]byte("\n"))
+	}
 }
 
 func goi() []byte {
